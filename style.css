@@ -28,7 +28,7 @@ body{
 .calculator{
     flex: 1 0 auto;
     width: 350px;
-    height: 520px;
+    height: 510px;
     margin-top: 15px;
     background-color: #e6eacf;
     border-radius: 3px;
@@ -41,6 +41,9 @@ body{
     border-radius: 10px;
     background-color: #89cff0;
     margin: 20px auto;
+    text-align: right;
+    font-size: 26px;
+    padding: 10% 3%;
 }
 
 .group_btn{
@@ -90,9 +93,4 @@ footer{
 
 .img_footer{
     width: 35px;
-    transition: transform .4s ease-in-out;
-}
-
-.img_footer:hover{
-    transform: scale(1.1);
 }
