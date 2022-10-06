@@ -31,7 +31,7 @@ body{
     height: 510px;
     margin-top: 15px;
     background-color: #e6eacf;
-    border-radius: 3px;
+    border-radius: 12px;
     
 }
 
@@ -62,10 +62,10 @@ body{
     text-align: center;
     padding-top: 5%;
     margin: 2px;
-    cursor: pointer;
+    cursor: pointer !important;
 } 
 
-.equals{
+#equals{
     width: 135px;
     
 }
