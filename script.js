@@ -48,7 +48,7 @@ document.querySelector('.group_btn').onclick = function(e)
 
         else
         {
-            inter_value = display.textContent;
+            inter_value = firstNum+operator;
             lastNum += key;
             display.textContent = inter_value + lastNum;
         }
