@@ -63,11 +63,14 @@ body{
     padding-top: 5%;
     margin: 2px;
     cursor: pointer !important;
-} 
-
-#equals{
-    width: 135px;
     
+} 
+#ac{
+    flex-basis: 40%;
+}
+
+#ce{
+    flex-basis: 40%;
 }
 
 /* FOOTER */
