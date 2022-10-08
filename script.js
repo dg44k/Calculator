@@ -67,7 +67,7 @@ document.querySelector('.group_btn').onclick = function(e)
         let o = operate(firstNum,lastNum, operator);
         operator = key;
         display.textContent = `${Math.round(o * 1000) / 1000}`+operator;
-        firstNum = o;
+        firstNum = '';
         lastNum = '';
     }
 
@@ -112,7 +112,7 @@ document.querySelector('.group_btn').onclick = function(e)
             return;
         }
         display.textContent = Math.round(r * 1000) / 1000;
-        firstNum = `${r}`;
+        firstNum = '';
         lastNum = '';
         operator = '';
         flag = false;
