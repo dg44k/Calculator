@@ -36,7 +36,7 @@ document.querySelector('.group_btn').onclick = function(e)
     document.getElementById('ce').onclick = function()
     {
         let str = firstNum+operator+lastNum;
-        if(firstNum == ''){return;}
+        
         if(lastNum!= '')
         {
             lastNum = lastNum.slice(0, lastNum.length - 1);
@@ -67,7 +67,7 @@ document.querySelector('.group_btn').onclick = function(e)
         let o = operate(firstNum,lastNum, operator);
         operator = key;
         display.textContent = `${Math.round(o * 1000) / 1000}`+operator;
-        firstNum = '';
+        firstNum = o;
         lastNum = '';
     }
 
@@ -112,7 +112,7 @@ document.querySelector('.group_btn').onclick = function(e)
             return;
         }
         display.textContent = `${Math.round(r * 1000) / 1000}`;
-        firstNum = '';
+        firstNum = `${Math.round(r * 1000) / 1000}`;
         lastNum = '';
         operator = '';
         flag = false;
