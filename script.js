@@ -102,16 +102,16 @@ document.querySelector('.group_btn').onclick = function(e)
     {
         if(lastNum == '') return;
         let r = operate(firstNum, lastNum, operator);
-        if(r == 0)
+        if(r == 'Error')
         {
             display.textContent = '';
             firstNum = '';
-             lastNum = '';
+            lastNum = '';
             flag = false;
             operator = '';
             return;
         }
-        display.textContent = Math.round(r * 1000) / 1000;
+        display.textContent = `${Math.round(r * 1000) / 1000}`;
         firstNum = '';
         lastNum = '';
         operator = '';
@@ -132,7 +132,7 @@ function operate(a, b, operator) {
             if(b == '0')
             {
                 alert('Error');
-                return 0;
+                return 'Error';
             }
             return Number(a)/Number(b);
 
