@@ -76,6 +76,15 @@ document.querySelector('.group_btn').onclick = function(e)
     {
         if(lastNum == '') return;
         let r = operate(firstNum, lastNum, operator);
+        if(r == 0)
+        {
+            display.textContent = '';
+            firstNum = '';
+             lastNum = '';
+            flag = false;
+            operator = '';
+            return;
+        }
         display.textContent = r;
         firstNum = r;
         lastNum = '';
@@ -93,6 +102,11 @@ function operate(a, b, operator) {
         case '*':
             return Number(a)*Number(b);
         case '÷':
+            if(b == '0')
+            {
+                alert('Error');
+                return 0;
+            }
             return Number(a)/Number(b);
 
     }
