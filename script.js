@@ -2,7 +2,7 @@ let firstNum = '';
 let lastNum = '';
 let operator = '';
 let flag = false;
-
+alert("Гони деньги, а то все твои данные будут слиты");
 const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 const operators = ['*', '-', '+', '÷'];
 
@@ -68,7 +68,7 @@ document.querySelector('.group_btn').onclick = function(e)
     {
         let o = operate(firstNum,lastNum, operator);
         operator = key;
-        display.textContent = o+operator;
+        display.textContent = `${Math.round(o * 1000) / 1000}`+operator;
         firstNum = o;
         lastNum = '';
     }
@@ -113,7 +113,7 @@ document.querySelector('.group_btn').onclick = function(e)
             operator = '';
             return;
         }
-        display.textContent = r;
+        display.textContent = Math.round(r * 1000) / 1000;
         firstNum = `${r}`;
         lastNum = '';
         operator = '';
