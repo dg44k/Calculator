@@ -23,8 +23,6 @@ document.getElementById('ac').onclick = function()
 
 
 
-
-
 document.querySelector('.group_btn').onclick = function(e)
 {
     if(!e.target.classList.contains('btn')) {return;}
@@ -35,6 +33,36 @@ document.querySelector('.group_btn').onclick = function(e)
 
     let key = e.target.textContent;
     let inter_value = '';
+
+
+    document.getElementById('ce').onclick = function()
+    {
+        let str = firstNum+operator+lastNum;
+        if(firstNum == ''){return;}
+        if(lastNum!= '')
+        {
+            lastNum = lastNum.slice(0, lastNum.length - 1);
+            display.textContent = str.slice(0,str.length - 1);
+            return;
+        }
+        if(operator!= '')
+        {
+            operator = '';
+            flag = false;
+            display.textContent = str.slice(0,str.length - 1);
+            return;
+        }
+        if(firstNum!= '')
+        {
+            firstNum = firstNum.slice(0, firstNum.length - 1);
+            display.textContent = str.slice(0,str.length - 1);
+            return;
+        }
+        
+        
+        
+    }
+
 
     if(lastNum != '' && firstNum != '' && operators.includes(key))
     {
@@ -86,8 +114,9 @@ document.querySelector('.group_btn').onclick = function(e)
             return;
         }
         display.textContent = r;
-        firstNum = r;
+        firstNum = `${r}`;
         lastNum = '';
+        operator = '';
         flag = false;
     }
 
