@@ -21,8 +21,6 @@ document.getElementById('ac').onclick = function()
 }
 
 
-
-
 document.querySelector('.group_btn').onclick = function(e)
 {
     if(!e.target.classList.contains('btn')) {return;}
