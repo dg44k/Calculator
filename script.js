@@ -1,6 +1,7 @@
 let firstNum = '';
 let lastNum = '';
 let operator = '';
+let flag = false;
 
 const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 const operators = ['*', '-', '+', '÷'];
@@ -8,14 +9,21 @@ const operators = ['*', '-', '+', '÷'];
 const display = document.querySelector(".display_calculator");
 const equal = document.getElementById('equals');
 
+
+
 document.getElementById('ac').onclick = function()
 {
     firstNum = '';
     lastNum = '';
     operator = '';
-
+    flag = false;
     display.textContent = '';
 }
+
+
+
+
+
 
 document.querySelector('.group_btn').onclick = function(e)
 {
@@ -23,7 +31,7 @@ document.querySelector('.group_btn').onclick = function(e)
 
 
     if(e.target.id == 'ac') {return;}
-   
+    
 
     let key = e.target.textContent;
     let inter_value = '';
@@ -31,9 +39,9 @@ document.querySelector('.group_btn').onclick = function(e)
     if(lastNum != '' && firstNum != '' && operators.includes(key))
     {
         let o = operate(firstNum,lastNum, operator);
-        display.textContent = o;
-        firstNum = o;
         operator = key;
+        display.textContent = o+operator;
+        firstNum = o;
         lastNum = '';
     }
 
@@ -55,22 +63,23 @@ document.querySelector('.group_btn').onclick = function(e)
     }
 
 
-    if(operators.includes(key))
+    if(operators.includes(key) && flag == false && firstNum != '')
     {
         operator = key;
         display.textContent += operator;
+        flag = true;
 
     }
 
 
     if(key == equal.textContent)
     {
+        if(lastNum == '') return;
         let r = operate(firstNum, lastNum, operator);
-        if(lastNum == '') lastNum = firstNum;
         display.textContent = r;
         firstNum = r;
         lastNum = '';
-
+        flag = false;
     }
 
 }
