@@ -76,6 +76,7 @@ document.querySelector('.group_btn').onclick = function(e)
     {
         if(operator == '' && lastNum == '')
         {
+            if(firstNum == '.' && key == '.') return;
             firstNum += key;
             display.textContent = firstNum;
         }
@@ -83,6 +84,7 @@ document.querySelector('.group_btn').onclick = function(e)
         else
         {
             inter_value = firstNum+operator;
+            if(lastNum == '.' && key == '.') return;
             lastNum += key;
             display.textContent = inter_value + lastNum;
         }
